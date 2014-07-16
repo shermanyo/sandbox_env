@@ -1,0 +1,82 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Plugin 'gmarik/vundle'
+
+" file manager
+Plugin 'scrooloose/nerdtree'
+nmap <F2> :NERDTreeToggle<CR>
+
+" git plugin
+Plugin 'tpope/vim-fugitive'
+
+" code tags
+Plugin 'majutsushi/tagbar'
+nmap <F4> :TagbarToggle<CR>
+
+" autocomplete
+Plugin 'omniperl'
+Plugin 'perl-support.vim'
+Plugin 'ucompleteme'
+call ucompleteme#Setup()
+
+" tab manager
+Plugin 'treelite/tabbar'
+
+
+
+" Now we can turn our filetype functionality back on
+filetype on
+filetype plugin indent on
+
+set shiftwidth=4
+set tabstop=4
+set noexpandtab
+set smartindent
+
+"colorscheme default
+syntax enable
+set number
+set ruler
+
+set hlsearch
+set showmatch
+
+set cursorline
+set showcmd
+set showmode
+"set scrolloff=4
+
+
+
+set foldmethod=indent
+" show indicator column
+set foldcolumn=3
+" dont get too carried away
+set foldnestmax=2
+" dont fold initially
+set foldlevel=99
+
+" toggle fold
+nnoremap <silent> <F3> za
+" set fold based on visual block
+" vnoremap <F3> zf
+
+" dont mess with formatting when pasting
+set pastetoggle=<F12>
+
+
+
+set nolazyredraw
+
+" remove any trailing whitespace that is in the file
+autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+
+" no temp files
+set nobackup
+set nowritebackup
+set noswapfile
+
