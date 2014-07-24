@@ -1,8 +1,9 @@
 #!/bin/bash
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 mv ~/.vimrc ~/.vimrc.ORIG
+mv ~/.vim/ ~/.vimORIG
 cp ./vimrc ~/.vimrc
 
-echo "Open vim and run:"
-echo ":PluginInstall!"
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+vim +PluginInstall +qall
+

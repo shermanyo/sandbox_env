@@ -51,8 +51,7 @@ set showmode
 "set scrolloff=4
 
 
-
-set foldmethod=indent
+set foldmethod=manual
 " show indicator column
 set foldcolumn=3
 " dont get too carried away
@@ -60,10 +59,15 @@ set foldnestmax=2
 " dont fold initially
 set foldlevel=99
 
+" save and load folds
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+"let perl_fold = 1
 " toggle fold
 nnoremap <silent> <F3> za
 " set fold based on visual block
-" vnoremap <F3> zf
+vnoremap <F3> zf
 
 " dont mess with formatting when pasting
 set pastetoggle=<F12>
@@ -73,7 +77,7 @@ set pastetoggle=<F12>
 set nolazyredraw
 
 " remove any trailing whitespace that is in the file
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
+"autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " no temp files
 set nobackup
