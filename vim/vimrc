@@ -8,14 +8,18 @@ Plugin 'gmarik/vundle'
 
 " file manager
 Plugin 'scrooloose/nerdtree'
-nmap <F2> :NERDTreeToggle<CR>
+nmap <F3> :NERDTreeToggle<CR>
 
 " git plugin
 Plugin 'tpope/vim-fugitive'
 
 " code tags
 Plugin 'majutsushi/tagbar'
-nmap <F4> :TagbarToggle<CR>
+nmap <F5> :TagbarToggle<CR>
+Plugin 'taglist.vim'
+
+" extra matches for % 
+Plugin 'matchit.zip'
 
 " autocomplete
 Plugin 'omniperl'
@@ -23,8 +27,35 @@ Plugin 'perl-support.vim'
 Plugin 'ucompleteme'
 call ucompleteme#Setup()
 
+"include pod.vim syntax file with perl.vim"
+let perl_include_pod   = 1
+"highlight complex expressions such as @{[$x, $y]}"
+let perl_extended_vars = 1
+"use more context for highlighting"
+let perl_sync_dist     = 250
+
 " tab manager
-Plugin 'treelite/tabbar'
+"Plugin 'treelite/tabbar'
+
+
+" markdown support
+Plugin 'Markdown'
+Plugin 'Markdown-syntax'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+
+" additional syntax, etc...
+
+
+" unsorted
+Plugin 'ctrlp.vim'
+
+
+
+" testing / temp / toggled
+
+
 
 
 
@@ -63,20 +94,36 @@ set foldlevel=99
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-"let perl_fold = 1
 " toggle fold
-nnoremap <silent> <F3> za
+nnoremap <silent> <F4> za
 " set fold based on visual block
-vnoremap <F3> zf
+vnoremap <F4> zf
+"let perl_fold = 1
 
 " dont mess with formatting when pasting
-set pastetoggle=<F12>
+set pastetoggle=<F2>
+
+
+
+" Easy window navigation
+nmap <silent> <C-left> <C-w>h
+nmap <silent> <C-down> <C-w>j
+nmap <silent> <C-up> <C-w>k
+nmap <silent> <C-right> <C-w>l
+" then fix arrows in insert mode
+imap <ESC>oA <ESC>ki
+imap <ESC>oB <ESC>ji
+imap <ESC>oC <ESC>li
+imap <ESC>oD <ESC>hi
+
+
 
 
 
 set nolazyredraw
 
 " remove any trailing whitespace that is in the file
+" Note: breaks markdown linebreaks (trailing double spaces)
 "autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " no temp files
