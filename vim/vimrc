@@ -17,15 +17,17 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 nmap <F5> :TagbarToggle<CR>
 Plugin 'taglist.vim'
+" search for tags file in current dir, then traverse up til found
+set tags=./tags;$HOME/workspace
 
 " extra matches for % 
 Plugin 'matchit.zip'
 
 " autocomplete
-Plugin 'omniperl'
-Plugin 'perl-support.vim'
-Plugin 'ucompleteme'
-call ucompleteme#Setup()
+"Plugin 'omniperl'
+"Plugin 'perl-support.vim'
+"Plugin 'ucompleteme'
+"call ucompleteme#Setup()
 
 "include pod.vim syntax file with perl.vim"
 let perl_include_pod   = 1
@@ -35,21 +37,21 @@ let perl_extended_vars = 1
 let perl_sync_dist     = 250
 
 " tab manager
-"Plugin 'treelite/tabbar'
+Plugin 'treelite/tabbar'
 
 
 " markdown support
-Plugin 'Markdown'
-Plugin 'Markdown-syntax'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'Markdown'
+"Plugin 'Markdown-syntax'
+"Plugin 'godlygeek/tabular'
+"Plugin 'plasticboy/vim-markdown'
 
 
 " additional syntax, etc...
 
 
 " unsorted
-Plugin 'ctrlp.vim'
+"Plugin 'ctrlp.vim'
 
 
 
@@ -100,9 +102,6 @@ nnoremap <silent> <F4> za
 vnoremap <F4> zf
 "let perl_fold = 1
 
-" dont mess with formatting when pasting
-set pastetoggle=<F2>
-
 
 
 " Easy window navigation
@@ -117,6 +116,18 @@ imap <ESC>oC <ESC>li
 imap <ESC>oD <ESC>hi
 
 
+
+" hide fold and line numbers columns
+nmap <F10> :set foldcolumn=0<CR>:set nonumber<CR>
+imap <F10> <ESC>:set foldcolumn=0<CR>:set nonumber<CR>i
+
+" show fold and line numbers columns
+nmap <F9> :set foldcolumn=3<CR>:set number<CR>
+imap <F9> <ESC>:set foldcolumn=3<CR>:set number<CR>i
+
+
+" dont mess with formatting when pasting
+set pastetoggle=<F2>
 
 
 

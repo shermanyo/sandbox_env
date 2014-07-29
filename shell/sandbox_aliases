@@ -1,0 +1,50 @@
+
+#
+# shell helpers and common extensions
+#
+
+alias shell_set_tiny_prompt="export OLDPS1=\$PS1 && export PS1='$ '"
+alias shell_reset_prompt="export PS1=\$OLDPS1"
+
+#
+# workspace and pseudo-project aliases
+#
+
+alias show_workspace_projects="find ~/workspace/ -type d -name .git"
+
+alias project_set_dir="echo \`pwd\` > ~/.projectdir"
+alias project_cd="cd \`cat ~/.projectdir\`"
+
+#
+# general command aliases
+#
+alias XDesktop-local="Xephyr :2 -ac -screen 1440x900 -br -reset -terminate -query localhost"
+alias markdown2html="pandoc -s README.md -o README.html"
+
+
+
+#
+# perl aliases
+#
+
+
+
+#
+# git helper aliases
+#
+
+# find git projects
+alias git_find_projects='find . -name .git -type d'
+
+# show change tree
+alias git_tree='git log --graph --decorate --all'
+alias git_tree_short='git log --graph --decorate --oneline --all'
+
+# push to downstream (non-master) branch on remote origin server
+alias git_downstream_push='git push origin HEAD:downstream'
+# merge in changes from donwstream branch
+alias git_downstream_merge='git merge downstream'
+
+alias git_remote_info='git remote -v'
+
+
