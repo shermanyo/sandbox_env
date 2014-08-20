@@ -118,8 +118,8 @@ imap <ESC>oD <ESC>hi
 
 
 " hide fold and line numbers columns
-nmap <F10> :set foldcolumn=0<CR>:set nonumber<CR>
-imap <F10> <ESC>:set foldcolumn=0<CR>:set nonumber<CR>i
+nmap <F8> :set foldcolumn=0<CR>:set nonumber<CR>
+imap <F8> <ESC>:set foldcolumn=0<CR>:set nonumber<CR>i
 
 " show fold and line numbers columns
 nmap <F9> :set foldcolumn=3<CR>:set number<CR>
