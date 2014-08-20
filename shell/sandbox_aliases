@@ -1,10 +1,40 @@
 
 #
+# general command aliases
+#
+alias XDesktop-local="Xephyr :2 -ac -screen 1440x900 -br -reset -terminate -query localhost"
+alias markdown2html="pandoc -s README.md -o README.html"
+
+
+
+
+#
+# sandbox_env aliases
+#
+sbenv_install() {
+	if [ -x $1/setup.sh ]; then
+		echo "installing $1"
+		pushd $1
+		bash ./setup.sh
+		popd
+		echo "$1 installed successfully"
+	else
+		echo "Setup for $1 not found, ignoring"
+	fi
+}
+
+
+
+
+#
 # shell helpers and common extensions
 #
 
 alias shell_set_tiny_prompt="export OLDPS1=\$PS1 && export PS1='$ '"
 alias shell_reset_prompt="export PS1=\$OLDPS1"
+
+
+
 
 #
 # workspace and pseudo-project aliases
@@ -15,17 +45,13 @@ alias show_workspace_projects="find ~/workspace/ -type d -name .git"
 alias project_set_dir="echo \`pwd\` > ~/.projectdir"
 alias project_cd="cd \`cat ~/.projectdir\`"
 
-#
-# general command aliases
-#
-alias XDesktop-local="Xephyr :2 -ac -screen 1440x900 -br -reset -terminate -query localhost"
-alias markdown2html="pandoc -s README.md -o README.html"
 
 
 
 #
 # perl aliases
 #
+
 
 
 
