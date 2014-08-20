@@ -38,6 +38,9 @@ sudo apt-get install git build-essential cmake
 # general utilities and libraries
 sudo apt-get install tree
 
+
+
+
 #
 # Download my sandbox_env repo and set up the usual environment
 #
@@ -45,10 +48,24 @@ sudo apt-get install tree
 cd ~/downloads/git_clones/
 git clone http://github.com/shermanyo/sandbox_env
 
-export SANDBOX_ENV_ROOT="~/downloads/git_clones/sandbox_env"
 echo 'export SANDBOX_ENV_ROOT="~/downloads/git_clones/sandbox_env"' >> ~/.profile
+source ~/.profile
+
+
+
+
+#
+# install the environment components
+#
 
 cd $SANDBOX_ENV_ROOT
+
+sbenv_setup shell
+sbenv_setup vim
+sbenv_setup perl
+sbenv_setup awesome
+
+
 
 
 #
