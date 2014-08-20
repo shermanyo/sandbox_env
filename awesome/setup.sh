@@ -43,7 +43,7 @@ cp awesomerc.lua.in ~/.config/awesome/rc.lua
 # copy example theme - default
 find . -name theme.lua |grep default |xargs cp -t ~/.config/awesome/themes/default/
 # set the theme path in the awesome config
-sed -i 's/@AWESOME_THEMES_PATH@/~\/.config\/awesome\/themes/g ~/.config/awesome/rc.lua'
+sed -i 's/@AWESOME_THEMES_PATH@/~\/.config\/awesome\/themes/g' ~/.config/awesome/rc.lua
 
 # create a new xinitrc that just starts awesome
 mv ~/.xinitrc ~/.xinitrc.OLD
