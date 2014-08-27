@@ -2,7 +2,6 @@
 #
 # general command aliases
 #
-alias XDesktop-local="Xephyr :2 -ac -screen 1440x900 -br -reset -terminate -query localhost"
 alias markdown2html="pandoc -s README.md -o README.html"
 
 
@@ -45,6 +44,13 @@ alias show_workspace_projects="find ~/workspace/ -type d -name .git"
 alias project_set_dir="echo \`pwd\` > ~/.projectdir"
 alias project_cd="cd \`cat ~/.projectdir\`"
 
+alias rtc_workspace_set_dir="echo \`pwd\` > ~/.rtcworkspacedir"
+alias rtc_workspace_cd="cd \`cat ~/.rtcworkspacedir\`"
+
+#
+# general command aliases
+#
+alias markdown2html="pandoc -s README.md -o README.html"
 
 
 
@@ -74,3 +80,7 @@ alias git_downstream_merge='git merge downstream'
 alias git_remote_info='git remote -v'
 
 
+#
+# SSH tunnels and environment
+#
+alias setup_tunnels='bash ~/.ssh/setup_tunnels.sh'

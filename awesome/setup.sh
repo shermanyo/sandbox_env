@@ -24,6 +24,7 @@ sudo apt-get install xorg xserver-xorg xserver-xorg-video-vesa xinit
 #
 
 # download the latest source to a new directory
+rm -rf ~/downloads/git_clones/awesome
 mkdir -p ~/downloads/git_clones/awesome
 cd ~/downloads/git_clones/
 git clone git://git.naquadah.org/awesome.git
