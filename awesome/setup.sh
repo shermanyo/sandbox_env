@@ -10,13 +10,13 @@ pushd .
 #
 
 # build dependencies for awesome wm
-sudo apt-get build-dep awesome
-sudo apt-get install libxcb-cursor-dev libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-dev lua-lgi-dev
-sudo apt-get build-dep lua-lgi-dev
-sudo apt-get install dbus dbus-x11
+sudo apt-get -y build-dep awesome
+sudo apt-get -y install libxcb-cursor-dev libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-dev lua-lgi-dev
+sudo apt-get -y build-dep lua-lgi-dev
+sudo apt-get -y install dbus dbus-x11
 
 # x environment
-sudo apt-get install xorg xserver-xorg xserver-xorg-video-vesa xinit
+sudo apt-get -y install xorg xserver-xorg xserver-xorg-video-vesa xinit
 
 
 #
