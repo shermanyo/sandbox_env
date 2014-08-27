@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install perlbrew
+sudo apt-get -y install perlbrew
 
 perlbrew init
 echo "source ~/perl5/perlbrew/etc/bashrc"  >> ~/.profile 
