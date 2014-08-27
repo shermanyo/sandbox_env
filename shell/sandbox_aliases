@@ -10,7 +10,7 @@ alias markdown2html="pandoc -s README.md -o README.html"
 #
 # sandbox_env aliases
 #
-sbenv_install() {
+function sbenv_install {
 	if [ -x $1/setup.sh ]; then
 		echo "installing $1"
 		pushd $1
