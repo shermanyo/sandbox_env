@@ -62,14 +62,12 @@ fi
 # Download my sandbox_env repo and set up the usual environment
 #
 
-mkdir ~/git_clones/
-cd ~/git_clones/
-git clone http://github.com/shermanyo/sandbox_env
+export SANDBOX_ENV_ROOT="~/git_clones/sandbox_env"
+echo export SANDBOX_ENV_ROOT=\"$SANDBOX_ENV_ROOT\" >> ~/.profile
 
-echo 'export SANDBOX_ENV_ROOT="~/downloads/git_clones/sandbox_env"' >> ~/.profile
-source ~/.profile
+mkdir -p $SANDBOX_ENV_ROOT
 
-cd $SANDBOX_ENV_ROOT
+git clone http://github.com/shermanyo/sandbox_env $SANDBOX_ENV_ROOT
 
 
 
@@ -89,10 +87,10 @@ source $SANDBOX_ENV_ROOT/shell/sandbox_aliases
 #
 
 # initial build tools
-sudo apt-get install git build-essential cmake
+sudo apt-get -y install git build-essential cmake
 
 # general utilities and libraries
-sudo apt-get install rxvt-unicode tree 
+sudo apt-get -y install rxvt-unicode tree 
 
 
 
