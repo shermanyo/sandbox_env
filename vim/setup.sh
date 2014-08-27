@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install ctags
+sudo apt-get -y install ctags
 
 mv ~/.vimrc ~/.vimrc.ORIG
 mv ~/.vim/ ~/.vimORIG
