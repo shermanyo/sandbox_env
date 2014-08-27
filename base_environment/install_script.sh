@@ -55,6 +55,9 @@ fi
 
 
 
+
+
+
 #
 # Download my sandbox_env repo and set up the usual environment
 #
@@ -63,8 +66,15 @@ mkdir ~/git_clones/
 cd ~/git_clones/
 git clone http://github.com/shermanyo/sandbox_env
 
-export SANDBOX_ENV_ROOT="~/downloads/git_clones/sandbox_env"
 echo 'export SANDBOX_ENV_ROOT="~/downloads/git_clones/sandbox_env"' >> ~/.profile
+source ~/.profile
+
+
+
+
+#
+# install the environment components
+#
 
 # Load sandbox aliases
 source $SANDBOX_ENV_ROOT/shell/sandbox_aliases
@@ -107,6 +117,13 @@ if [ "$INSTALL_SET" = "desktop" ]; then
 	sbenv_install awesome
 
 fi
+
+
+
+sbenv_setup shell
+sbenv_setup vim
+sbenv_setup perl
+sbenv_setup awesome
 
 
 
