@@ -18,6 +18,9 @@ sudo apt-get -y install dbus dbus-x11
 # x environment
 sudo apt-get -y install xorg xserver-xorg xserver-xorg-video-all xinit
 
+# desktop apps
+sudo apt-get -y install firefox libreoffice-writer libreoffice-impress
+
 
 #
 # Download awesome and build from source
