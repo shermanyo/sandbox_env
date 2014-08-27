@@ -77,7 +77,7 @@ git clone http://github.com/shermanyo/sandbox_env $SANDBOX_ENV_ROOT
 #
 
 # Load sandbox aliases - for sbenv_install function
-source $SANDBOX_ENV_ROOT/shell/sandbox_aliases
+. $SANDBOX_ENV_ROOT/shell/sandbox_aliases
 
 
 
@@ -105,6 +105,9 @@ sudo apt-get -y install rxvt-unicode tree
 #   - awesome window manager
 #
 
+pushd $SANDBOX_ENV_ROOT
+
+
 sbenv_install shell
 sbenv_install vim
 sbenv_install perl
@@ -115,6 +118,9 @@ if [ "$INSTALL_SET" = "desktop" ]; then
 	sbenv_install awesome
 
 fi
+
+
+popd
 
 
 
