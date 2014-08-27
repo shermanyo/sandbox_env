@@ -69,6 +69,8 @@ git clone http://github.com/shermanyo/sandbox_env
 echo 'export SANDBOX_ENV_ROOT="~/downloads/git_clones/sandbox_env"' >> ~/.profile
 source ~/.profile
 
+cd $SANDBOX_ENV_ROOT
+
 
 
 
@@ -76,21 +78,10 @@ source ~/.profile
 # install the environment components
 #
 
-# Load sandbox aliases
+# Load sandbox aliases - for sbenv_install function
 source $SANDBOX_ENV_ROOT/shell/sandbox_aliases
 
 
-
-
-#
-# Setup my default sandbox environment:
-#   - shell extensions and config
-#   - vim settings and plugins
-#   - 
-#
-# If run with -desktop :
-#   - awesome window manager
-#
 
 
 #
@@ -104,12 +95,21 @@ sudo apt-get install git build-essential cmake
 sudo apt-get install rxvt-unicode tree 
 
 
+
+
 #
-# use sbenv_install alias to setup my other packages
+# use sbenv_install to setup my default sandbox environment:
+#   - shell extensions and config
+#   - vim settings and plugins
+#   - perlbrew environment with perl 5.18
+#
+# If run with -desktop :
+#   - awesome window manager
 #
 
 sbenv_install shell
 sbenv_install vim
+sbenv_install perl
 
 # install desktop packages
 if [ "$INSTALL_SET" = "desktop" ]; then
@@ -117,13 +117,6 @@ if [ "$INSTALL_SET" = "desktop" ]; then
 	sbenv_install awesome
 
 fi
-
-
-
-sbenv_setup shell
-sbenv_setup vim
-sbenv_setup perl
-sbenv_setup awesome
 
 
 
