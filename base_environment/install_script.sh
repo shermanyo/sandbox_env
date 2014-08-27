@@ -62,8 +62,11 @@ fi
 # Download my sandbox_env repo and set up the usual environment
 #
 
-export SANDBOX_ENV_ROOT="~/git_clones/sandbox_env"
-echo export SANDBOX_ENV_ROOT=\"$SANDBOX_ENV_ROOT\" >> ~/.profile
+export GIT_CLONES_ROOT=~/git_clones
+export SANDBOX_ENV_ROOT=$GIT_CLONES_ROOT/sandbox_env
+
+echo export GIT_CLONES_ROOT=$GIT_CLONES_ROOT >> ~/.profile
+echo export SANDBOX_ENV_ROOT=$SANDBOX_ENV_ROOT >> ~/.profile
 
 mkdir -p $SANDBOX_ENV_ROOT
 

@@ -16,7 +16,7 @@ sudo apt-get -y build-dep lua-lgi-dev
 sudo apt-get -y install dbus dbus-x11
 
 # x environment
-sudo apt-get -y install xorg xserver-xorg xserver-xorg-video-vesa xinit
+sudo apt-get -y install xorg xserver-xorg xserver-xorg-video-all xinit
 
 
 #
@@ -24,9 +24,9 @@ sudo apt-get -y install xorg xserver-xorg xserver-xorg-video-vesa xinit
 #
 
 # download the latest source to a new directory
-rm -rf ~/downloads/git_clones/awesome
-mkdir -p ~/downloads/git_clones/awesome
-cd ~/downloads/git_clones/
+rm -rf $GIT_CLONES_ROOT/awesome
+mkdir -p $GIT_CLONES_ROOT/awesome
+cd $GIT_CLONES_ROOT
 git clone git://git.naquadah.org/awesome.git
 cd awesome/
 
@@ -35,6 +35,8 @@ make
 sudo make install
 
 # create user config directories
+rm -rf ~/.config/awesome_OLD
+mv ~/.config/awesome/ ~/.config/awesome_OLD
 mkdir -p ~/.config/awesome/themes/default
 
 # copy example config
@@ -45,6 +47,7 @@ cp awesomerc.lua.in ~/.config/awesome/rc.lua
 find . -name theme.lua |grep default |xargs cp -t ~/.config/awesome/themes/default/
 # set the theme path in the awesome config
 sed -i 's/@AWESOME_THEMES_PATH@/~\/.config\/awesome\/themes/g' ~/.config/awesome/rc.lua
+sed -i 's/xterm/rxvt-unicode/g' ~/.config/awesome/rc.lua
 
 # create a new xinitrc that just starts awesome
 mv ~/.xinitrc ~/.xinitrc.OLD
