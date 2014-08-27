@@ -11,6 +11,8 @@ Next I either source a copy of __sandbox_env/base_environment/install_script.sh_
     echo export SANDBOX_ENV_ROOT=$SANDBOX_ENV_ROOT >> ~/.profile
     
     mkdir -p $SANDBOX_ENV_ROOT
+    
+    sudo apt-get -y install git
     git clone http://github.com/shermanyo/sandbox_env $SANDBOX_ENV_ROOT
     
     # run the install script:
