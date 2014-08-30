@@ -8,3 +8,7 @@ source ~/perl5/perlbrew/etc/bashrc
 
 perlbrew install perl-5.18.2
 perlbrew use perl-5.18.2
+
+perlbrew install-cpanm
+perlbrew install-patchperl
+
